@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<h:head />
+	<h:body>
+		
+		<p:dataTable var="product" value="#{saleTaxViewMB.productProducer.productList1}" >
+		<f:facet name="header">
+        	Output 1:
+    	</f:facet>
+		<p:column headerText="Name" >
+            <h:outputText value="#{product.name}" />
+        </p:column>
+        <p:column headerText="Price" >
+        	<p:outputLabel value="#{saleTaxViewMB.taxControler.calculateTotalValue(product)}"></p:outputLabel>
+            
+        </p:column> 
+        <f:facet name="footer">
+       		<p:outputLabel value="Total: #{saleTaxViewMB.taxControler.calculateTotal(saleTaxViewMB.productProducer.productList1)} " /> <p:outputLabel value="Sales Taxes: #{saleTaxViewMB.taxControler.calculateSalesTax(saleTaxViewMB.productProducer.productList1)} " />   
+    	</f:facet>
+    	
+		</p:dataTable>
+		<p:spacer  height="20" />
+		
+		<p:dataTable var="product" value="#{saleTaxViewMB.productProducer.productList1}" >
+		<f:facet name="header">
+        	Output 2:
+    	</f:facet>
+		<p:column headerText="Name" >
+            <h:outputText value="#{product.name}" />
+        </p:column>
+        <p:column headerText="Price" >
+        	<p:outputLabel value="#{saleTaxViewMB.taxControler.calculateTotalValue(product)}"></p:outputLabel>
+            
+        </p:column> 
+        <f:facet name="footer">
+       		<p:outputLabel value="Total: #{saleTaxViewMB.taxControler.calculateTotal(saleTaxViewMB.productProducer.productList2)} " /> <p:outputLabel value="Sales Taxes: #{saleTaxViewMB.taxControler.calculateSalesTax(saleTaxViewMB.productProducer.productList2)} " />   
+    	</f:facet>
+    	
+		</p:dataTable>
+		<p:spacer  height="20" />
+		<p:dataTable var="product" value="#{saleTaxViewMB.productProducer.productList3}" >
+		<f:facet name="header">
+        	Output 3:
+    	</f:facet>
+		<p:column headerText="Name" >
+            <h:outputText value="#{product.name}" />
+        </p:column>
+        <p:column headerText="Price" >
+        	<p:outputLabel value="#{saleTaxViewMB.taxControler.calculateTotalValue(product)}"></p:outputLabel>
+            
+        </p:column> 
+        <f:facet name="footer">
+       		<p:outputLabel value="Total: #{saleTaxViewMB.taxControler.calculateTotal(saleTaxViewMB.productProducer.productList3)} " /> <p:outputLabel value="Sales Taxes: #{saleTaxViewMB.taxControler.calculateSalesTax(saleTaxViewMB.productProducer.productList3)} " />   
+    	</f:facet>
+    	
+		</p:dataTable>
+	</h:body>
+</f:view>
